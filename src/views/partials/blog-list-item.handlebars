@@ -1,0 +1,14 @@
+<div class="blog-list-item card">
+  <a class="blog-list-item__link" href="/blog/{{blog.id}}">
+    <div class="blog-list-item__image" style="background-image: url('https://picsum.photos/seed/{{blog.id}}/900/300');">
+      <h2 class="blog-list-item__title shadow-text">{{blog.title}}</h2>
+    </div>
+    <div class="blog-list-item__brief">
+      {{blog.content}}
+    </div>
+    <div class="blog-list-item__meta">
+      <p class="blog-list-item__author">by {{blog.createdBy}}</p>
+      <p class="blog-list-item__date">on {{blog.createdOn}}</p>
+    </div>
+  </a>
+</div>
