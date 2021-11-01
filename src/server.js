@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const oneDay = 1000 * 60 * 60 * 24;
 
 const app = express();
-db.sequelize.sync();
+db.sequelize.authenticate();
 const sess = {
   secret: 'keyboard cat',
   saveUninitialized: true,

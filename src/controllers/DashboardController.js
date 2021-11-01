@@ -4,7 +4,7 @@ class DashboardController {
   static async get(req, res, _next) {
     if (!req.session.userId) return res.redirect('/login');
     const posts = await db.posts.findAll({
-      where: { author_id: req.session.userId },
+      where: { userId: req.session.userId },
       raw: true,
     });
 

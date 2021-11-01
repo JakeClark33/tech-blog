@@ -14,7 +14,7 @@ module.exports = {
       slug: {
         type: Sequelize.STRING
       },
-      image_seed: {
+      imageSeed: {
         type: Sequelize.STRING
       },
       content: {
@@ -23,8 +23,13 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      author_id: {
-        type: Sequelize.INTEGER
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'userId',
+        }
       },
       createdAt: {
         allowNull: false,

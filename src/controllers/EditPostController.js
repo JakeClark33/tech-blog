@@ -25,7 +25,7 @@ class EditPostController {
     post.set({
       title: req.body.title,
       slug: req.body.slug,
-      image_seed: req.body.image_seed,
+      imageSeed: req.body.imageSeed,
       content,
     });
 

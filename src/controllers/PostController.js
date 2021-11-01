@@ -8,20 +8,17 @@ class PostController {
       attributes: [
         'title',
         'content',
-        'image_seed',
-        'author_id',
-        [sequelize.fn('date_format', sequelize.col('createdAt'), '%b %d, %Y'), 'date'],
+        'imageSeed',
+        'userId',
+        [sequelize.fn('date_format', sequelize.col('Post.createdAt'), '%b %d, %Y'), 'date'],
       ],
-      // include: [{
-      //   model: db.users,
-      // }],
+      include: [{
+        model: db.users,
+      }],
       where: { slug: req.params.slug },
-      raw: true,
     });
 
-    console.log(post);
-
-    return res.render('post', { post, session: req.session, layout: 'layout' });
+    return res.render('post', { post: post.toJSON(), session: req.session, layout: 'layout' });
   }
 }
 

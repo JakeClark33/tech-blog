@@ -12,18 +12,18 @@ class NewPostController {
     const converter = new QuillDeltaToHtmlConverter(contentOps, {});
     const content = converter.convert();
 
-    const authorId = req.session.userId;
+    const { userId } = req.session;
 
-    if (!authorId) {
+    if (!userId) {
       return LoginController.renderLoginPage(req, res);
     }
 
     const post = await db.posts.create({
       title: req.body.title,
       slug: req.body.slug,
-      image_seed: req.body.image_seed,
+      imageSeed: req.body.imageSeed,
       content,
-      author_id: authorId,
+      userId,
     });
 
     return res.redirect(`/post/${post.slug}`);
