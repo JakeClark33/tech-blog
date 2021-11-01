@@ -1,0 +1,21 @@
+<form id="post-form" action="/dashboard/new-post" method="post">
+  <label for="title">Title</label>
+  <input id="blog-editor-title-input" class="input" type="text" name="title" />
+
+  <label for="slug">Slug</label>
+  <input id="blog-editor-slug-input" class="input" type="text" name="slug" />
+
+  <label for="image_seed">Image Seed</label>
+  <input
+    id="blog-editor-image-seed-input"
+    class="input"
+    type="text"
+    name="image_seed"
+  />
+
+  <input name="content" type="hidden">
+  <div name="" id="editor"></div>
+
+  <a href="/dashboard" class="btn">Cancel</a>
+  <button class="btn" type="submit">Save</button>
+</form>

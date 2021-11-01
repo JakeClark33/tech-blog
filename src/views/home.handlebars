@@ -1,0 +1,6 @@
+<div class="container">
+  {{ post }}
+  {{#each posts as |post|}}
+    {{> post-list-item post=post}}
+  {{/each}}
+</div>
