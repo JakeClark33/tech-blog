@@ -1,9 +1,32 @@
-.layout {
-  background: url('https://picsum.photos/seed/2/1400/1400') center / cover;
-}
+/* ======= Shared ==================== */
 
 .container {
-  width: 100%;
+  /* width: 100%;
+  margin: 0 auto; */
   max-width: 75rem;
-  margin: 0 auto;
+  /* padding: 4rem 2rem; */
+}
+
+.center-container {
+
+}
+
+.shadow-text {
+  color: white;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 2px 1px rgb(0 0 0 / 20%),
+    0 1px 3px rgb(0 0 0 / 12%);
+}
+
+
+/* ======= Home ==================== */
+
+.post_image {
+  background-size: cover;
+  background-position: center;
+}
+
+.post_title {
+  font-weight: normal;
+  font-size: 2.5rem;
+  margin-top: 12rem;
 }
