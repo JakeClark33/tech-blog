@@ -1,5 +1,3 @@
-/* ======= Shared ==================== */
-
 .container {
   /* width: 100%;
   margin: 0 auto; */
@@ -8,7 +6,11 @@
 }
 
 .center-container {
-
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .shadow-text {
@@ -17,8 +19,26 @@
     0 1px 3px rgb(0 0 0 / 12%);
 }
 
+.login_card {
+  justify-content: center;
+  padding: 2rem
+}
 
-/* ======= Home ==================== */
+.login__notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__notice-text {
+  font-size: 1.5rem;
+}
+
+.login__actions {
+  display: flex;
+  justify-content: space-between;
+}
 
 .post_image {
   background-size: cover;

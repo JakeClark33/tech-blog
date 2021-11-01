@@ -6,11 +6,13 @@ class SignupController {
     return res.render('signup', { session: req.session, layout: 'layout' });
   }
 
-  static post(req, res, _next) {
-    const user = db.users.create({
+  static async post(req, res, _next) {
+    const user = await db.users.create({
       username: req.body.username,
       passwordHash: hashPassword(req.body.password),
     });
+
+    console.log(user);
 
     req.session.username = user.username;
     req.session.userId = user.id;

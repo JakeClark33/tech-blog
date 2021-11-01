@@ -1,6 +1,5 @@
 const sequelize = require('sequelize');
 const db = require('../models');
-const user = require('../models/user');
 
 class PostController {
   static async get(req, res, _next) {
