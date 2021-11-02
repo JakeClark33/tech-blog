@@ -1,8 +1,9 @@
+body {
+  background-color: #cfcfcf;
+}
+
 .container {
-  /* width: 100%;
-  margin: 0 auto; */
   max-width: 75rem;
-  /* padding: 4rem 2rem; */
 }
 
 .center-container {
@@ -17,6 +18,29 @@
   color: white;
   text-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 2px 1px rgb(0 0 0 / 20%),
     0 1px 3px rgb(0 0 0 / 12%);
+}
+
+.fab {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.dashboard a {
+  text-decoration: none;
+}
+
+.dashboard a span {
+  text-decoration: underline;
+}
+
+.edit-post__wrapper {
+  width: auto;
+}
+
+.edit-post__actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 .login_card {
@@ -40,13 +64,38 @@
   justify-content: space-between;
 }
 
-.post_image {
+.post {
+  padding-bottom: 6rem;
+}
+
+.post__image {
   background-size: cover;
   background-position: center;
 }
 
-.post_title {
+.post__title {
   font-weight: normal;
   font-size: 2.5rem;
   margin-top: 12rem;
+}
+
+.post__meta-author {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.post__meta-date {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.post__content {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+}
+
+.post__content p {
+  font-size: 1.5rem;
+  line-height: 2rem
 }

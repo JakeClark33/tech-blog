@@ -1,0 +1,18 @@
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input class="mdl-textfield__input" type="text" name="title" value="{{ post.title }}">
+  <label class="mdl-textfield__label" for="title">Title</label>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input class="mdl-textfield__input" type="text" name="slug" value="{{ post.slug }}">
+  <label class="mdl-textfield__label" for="slug">Slug</label>
+</div>
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input class="mdl-textfield__input" type="text" name="imageSeed" value="{{ post.imageSeed }}">
+  <label class="mdl-textfield__label" for="imageSeed">Image Seed</label>
+</div>
+
+<input name="content" type="hidden">
+<input name="description" type="hidden">
+<div name="" id="editor">{{{ post.content }}}</div>

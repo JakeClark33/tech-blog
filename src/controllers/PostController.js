@@ -17,6 +17,8 @@ class PostController {
       where: { slug: req.params.slug },
     });
 
+    if (!post) return res.render('404', { layout: 'layout' });
+
     return res.render('post', { post: post.toJSON(), session: req.session, layout: 'layout' });
   }
 }

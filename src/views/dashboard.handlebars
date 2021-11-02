@@ -1,8 +1,26 @@
-<h1>dashboard</h1>
-<a href="/dashboard/new-post">New Post</a>
 
-{{#each posts as |post|}}
-  <a href="/post/{{post.id}}/edit">
-    {{post.title}}
-  </a>
-{{/each}}
+<div class="dashboard container mdl-grid">
+  <h1 class="mdl-cell mdl-cell--12-col">Your Posts</h1>
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+    <ul class="mdl-list">
+      {{#each posts as |post| }}
+        <li class="mdl-list__item mdl-list__item--three-line">
+          <span class="mdl-list__item-primary-content">
+            <span><a href="/post/{{post.slug}}">{{post.title}}</a></span>
+            <span class="mdl-list__item-text-body">
+              {{post.date}}
+            </span>
+          </span>
+          <span class="mdl-list__item-secondary-content">
+            <a class="mdl-list__item-secondary-action" href="/post/{{post.id}}/edit" title="edit"><i class="material-icons">edit</i></a>
+            <a class="mdl-list__item-secondary-action" href="/post/{{post.id}}/delete" title="delete"><i class="material-icons">delete</i></a>
+          </span>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<a href="/dashboard/new-post" class="fab mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">add</i>
+</a>

@@ -1,22 +1,11 @@
-<form id="post-form" action="/dashboard/new-post" method="post">
-  <label for="title">Title</label>
-  <input id="blog-editor-title-input" class="input" type="text" name="title" />
-
-  <label for="slug">Slug</label>
-  <input id="blog-editor-slug-input" class="input" type="text" name="slug" />
-
-  <label for="imageSeed">Image Seed</label>
-  <input
-    id="blog-editor-image-seed-input"
-    class="input"
-    type="text"
-    name="imageSeed"
-  />
-
-  <input name="content" type="hidden">
-  <input name="description" type="hidden">
-  <div name="" id="editor"></div>
-
-  <a href="/dashboard" class="btn">Cancel</a>
-  <button class="btn" type="submit">Save</button>
-</form>
+{{#> editor-wrapper }}
+  <form id="post-form" action="/dashboard/new-post" method="post">
+    <div class="edit-post__wrapper mdl-card__supporting-text">
+      {{> editor-fields }}
+    </div>
+    <div class="edit-post__actions mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="/dashboard">Cancel</a>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" type="submit">Save</button>
+    </div>
+  </form>
+{{/ editor-wrapper}}

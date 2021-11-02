@@ -14,17 +14,9 @@ if (postform) {
   });
 
   postform.onsubmit = () => {
-    // Populate hidden form on submit
     const contentInput = document.querySelector('input[name=content]');
+    const descriptionInput = document.querySelector('input[name=description]');
     contentInput.value = JSON.stringify(quill.getContents());
-
-    console.log('getContents', quill.getContents());
-    console.log('getText', quill.getText());
-
-    // console.log('Submitted', $(form).serialize(), $(form).serializeArray());
-
-    // No back end to actually submit to!
-    // alert('Open the console to see the submit data!');
-    // return false;
+    descriptionInput.value = `${quill.getText().substring(0, 100)}...`;
   };
 }

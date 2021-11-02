@@ -4,6 +4,7 @@ const HomeController = require('./HomeController');
 const NewPostController = require('./NewPostController');
 const PostController = require('./PostController');
 const EditPostController = require('./EditPostController');
+const DeletePostController = require('./DeletePostController');
 const DashboardController = require('./DashboardController');
 const LoginController = require('./LoginController');
 const LogoutController = require('./LogoutController');
@@ -36,6 +37,10 @@ router.route('/post/:slug')
 router.route('/post/:id/edit')
   .get((req, res, next) => EditPostController.get(req, res, next))
   .post((req, res, next) => EditPostController.post(req, res, next));
+
+router.route('/post/:id/delete')
+  .get((req, res, next) => DeletePostController.get(req, res, next))
+  .post((req, res, next) => DeletePostController.post(req, res, next));
 
 router.route('/signup')
   .get((req, res, next) => SignupController.get(req, res, next))
