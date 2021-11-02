@@ -22,7 +22,7 @@ class DeletePostController {
 
     if (!post || post.userId !== req.session.userId) return res.render('404', { layout: 'layout' });
 
-    post.destroy();
+    await post.destroy();
 
     return res.redirect('/dashboard');
   }

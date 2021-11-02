@@ -40,9 +40,37 @@ module.exports = {
         userId: userRows[2].id
       },
     ], {});
+
+    const posts = await queryInterface.sequelize.query(
+      `SELECT id from Posts;`
+    );
+
+    const postRows = posts[0];
+
+    await queryInterface.bulkInsert("Comments", [
+      { userId: userRows[1].id, postId: postRows[0].id, content: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet." },
+      { userId: userRows[2].id, postId: postRows[0].id, content: "Curabitur blandit tempus porttitor." },
+      { userId: userRows[0].id, postId: postRows[0].id, content: "Nullam id dolor id nibh ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor fringilla." },
+      { userId: userRows[0].id, postId: postRows[0].id, content: "Justo Dolor Nullam Sollicitudin Mollis" },
+      { userId: userRows[2].id, postId: postRows[1].id, content: "Sem Justo" },
+      { userId: userRows[1].id, postId: postRows[1].id, content: "Maecenas faucibus mollis interdum. Donec sed odio dui." },
+      { userId: userRows[0].id, postId: postRows[1].id, content: "Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum." },
+      { userId: userRows[1].id, postId: postRows[1].id, content: "Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus." },
+      { userId: userRows[2].id, postId: postRows[1].id, content: "Mattis Vehicula Ipsum" },
+      { userId: userRows[0].id, postId: postRows[2].id, content: "Euismod" },
+      { userId: userRows[2].id, postId: postRows[2].id, content: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna." },
+      { userId: userRows[1].id, postId: postRows[2].id, content: "Sed posuere consectetur est at lobortis." },
+      { userId: userRows[2].id, postId: postRows[2].id, content: "Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus." },
+      { userId: userRows[1].id, postId: postRows[2].id, content: "Tristique Elit Tortor" },
+      { userId: userRows[0].id, postId: postRows[2].id, content: "Ullamcorper" },
+      { userId: userRows[1].id, postId: postRows[2].id, content: "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." },
+      { userId: userRows[0].id, postId: postRows[2].id, content: "Etiam porta sem malesuada magna mollis euismod." },
+    ], {});
   },
 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.bulkDelete("Users", null, {});
+    await queryInterface.bulkDelete("Posts", null, {});
+    await queryInterface.bulkDelete("Comments", null, {});
   },
 };

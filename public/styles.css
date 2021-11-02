@@ -26,6 +26,33 @@ body {
   bottom: 3rem;
 }
 
+.comment {
+  padding:1rem;
+}
+
+.comment__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  margin-right: 16px;
+}
+
+.comment__meta {
+  display: flex;
+}
+
+.comment__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+
+.comment__content {
+  margin-top: 0.5rem;
+  font-size: 1.15rem;;
+}
+
 .dashboard a {
   text-decoration: none;
 }
@@ -98,4 +125,23 @@ body {
 .post__content p {
   font-size: 1.5rem;
   line-height: 2rem
+}
+
+.post__comments {
+  width: auto;
+  background-color: #eeeeee;
+}
+
+.post__actions {
+
+}
+
+.post__comment-form {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.post__comment-input {
+  flex-grow: 1;
 }

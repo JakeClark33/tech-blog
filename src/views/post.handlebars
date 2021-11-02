@@ -10,5 +10,30 @@
     <div class="post__content mdl-card__supporting-text">
       {{{ post.content }}}
     </div>
+    <div class="post__comments mdl-card__supporting-text">
+      {{#each comments as |comment| }}
+      <div class="comment">
+        <div class="comment__meta">
+          <img class="comment__avatar" src="https://i.pravatar.cc/48?u={{ comment.User.username }}" alt="{{ comment.User.username }}'s avatar">
+          <div class="comment__info">
+            <div><strong>{{ comment.User.username }}</strong></div>
+            <div><em>{{ comment.date }}</em></div>
+          </div>
+        </div>
+        <p class="comment__content">{{ comment.content }}</p>
+      </div>
+      {{/each}}
+      <div class="post__actions">
+        <form class="post__comment-form" action="/post/{{ post.id }}/comment" method="post">
+          <div class="post__comment-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="content">
+            <label class="mdl-textfield__label" for="conetnt">Comment</label>
+          </div>
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+            <i class="material-icons">check</i>
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
