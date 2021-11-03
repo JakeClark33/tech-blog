@@ -38,7 +38,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', routes);
 
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`App listening to port ${PORT}`);
-});
+//Wrap in se
+db.sequelize.sync().then(err => {
+  app.listen(PORT, () => {
+    // eslint-disable-next-line no-console
+    console.log(`App listening to port ${PORT}`);
+  });
+})
