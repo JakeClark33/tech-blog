@@ -22,6 +22,6 @@ module.exports = {
   //   database: process.env.DB_NAME,
   //   host: process.env.DB_HOST,
   //   port: process.env.DB_PORT,
-  use_env_variable:process.env.JAWSDB_URL
+  use_env_variable:"JAWSDB_URL"
   },
 };
